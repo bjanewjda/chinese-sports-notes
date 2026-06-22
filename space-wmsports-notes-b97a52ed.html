@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>完美体育 – 快速识别指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f5f9fc;
+      color: #1a2e3c;
+      line-height: 1.6;
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* 主容器 – 优雅网格卡片风格 */
+    .page {
+      max-width: 840px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 8px 24px rgba(26, 46, 60, 0.06);
+      padding: 2rem 1.6rem;
+      margin: 1rem 0;
+    }
+
+    /* 文章头部 */
+    .article-header {
+      border-bottom: 1px solid #dfe9ee;
+      padding-bottom: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .article-header h1 {
+      font-size: 1.9rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #0b3544;
+      margin-bottom: 0.4rem;
+    }
+
+    .article-header .subhead {
+      font-size: 1rem;
+      color: #4b6b7a;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .subhead span {
+      background: #d5eaf0;
+      color: #115766;
+      padding: 0.1rem 0.7rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    /* 导语块 */
+    .intro-card {
+      background: #eaf5f9;
+      padding: 1.2rem 1.4rem;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      border-left: 4px solid #229eab;
+    }
+
+    .intro-card p {
+      font-size: 1.02rem;
+      color: #173d4b;
+      margin-bottom: 0.4rem;
+    }
+
+    .intro-card .highlight {
+      font-weight: 500;
+      color: #117a8a;
+    }
+
+    /* 正文段落网格 */
+    .content-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+
+    .content-block {
+      background: #ffffff;
+      border: 1px solid #e1edf2;
+      border-radius: 18px;
+      padding: 1.2rem 1.4rem;
+      transition: box-shadow 0.1s ease;
+    }
+
+    .content-block:hover {
+      box-shadow: 0 2px 12px rgba(0, 120, 130, 0.06);
+    }
+
+    .content-block h2 {
+      font-size: 1.22rem;
+      font-weight: 600;
+      color: #094452;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .content-block h2::before {
+      content: "▍";
+      color: #30b8c5;
+      font-size: 1.5rem;
+      line-height: 0;
+    }
+
+    .content-block p {
+      margin-bottom: 0.6rem;
+      color: #214a59;
+    }
+
+    .content-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.7rem;
+    }
+
+    .tag-list em {
+      background: #ecf6f9;
+      color: #135d6b;
+      font-style: normal;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      border: 1px solid #c7dde5;
+    }
+
+    /* 引用提示块 — 类似便签纸 */
+    .quote-note {
+      background: #f7fcfd;
+      border: 1px dashed #7ecbd3;
+      border-radius: 14px;
+      padding: 1.2rem 1.4rem;
+      margin: 1.6rem 0;
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+    }
+
+    .quote-note .q-icon {
+      font-size: 1.6rem;
+      line-height: 1;
+      color: #30b8c5;
+    }
+
+    .quote-note .q-text {
+      flex: 1;
+    }
+
+    .quote-note .q-text p {
+      font-size: 0.95rem;
+      color: #1d4b5a;
+      margin-bottom: 0.2rem;
+    }
+
+    .quote-note .q-text .source {
+      font-size: 0.8rem;
+      color: #54808e;
+      margin-top: 0.4rem;
+      display: block;
+    }
+
+    /* 访问句 – 自然嵌入链接 */
+    .access-line {
+      background: #e7f4f8;
+      border-radius: 40px;
+      padding: 0.9rem 1.6rem;
+      margin: 1.6rem 0 0.8rem;
+      text-align: center;
+      font-size: 1.02rem;
+      color: #1b4d5c;
+      border: 1px solid #bbe1e9;
+    }
+
+    .access-line a {
+      color: #0e6f7e;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid #6ac8d4;
+      transition: border 0.1s;
+    }
+
+    .access-line a:hover {
+      border-bottom-color: #0e6f7e;
+    }
+
+    /* FAQ 摘要 */
+    .faq-mini {
+      margin-top: 2.2rem;
+      border-top: 1px solid #d9e7ed;
+      padding-top: 1.4rem;
+    }
+
+    .faq-mini details {
+      margin-bottom: 0.8rem;
+      background: #f4fafc;
+      border-radius: 14px;
+      padding: 0.6rem 1rem;
+      border: 1px solid #d2e4eb;
+    }
+
+    .faq-mini summary {
+      font-weight: 500;
+      color: #094452;
+      cursor: pointer;
+      padding: 0.3rem 0;
+    }
+
+    .faq-mini details p {
+      color: #1e4e5e;
+      margin-top: 0.5rem;
+      padding-left: 0.2rem;
+      font-size: 0.94rem;
+    }
+
+    /* 移动端友好 */
+    @media (max-width: 480px) {
+      body {
+        padding: 0.6rem;
+      }
+      .page {
+        padding: 1.2rem 0.9rem;
+        border-radius: 18px;
+      }
+      .article-header h1 {
+        font-size: 1.6rem;
+      }
+      .content-block {
+        padding: 1rem 1rem;
+      }
+      .access-line {
+        font-size: 0.95rem;
+        padding: 0.7rem 1rem;
+      }
+      .quote-note {
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+      }
+      .content-block.full {
+        grid-column: 1 / -1;
+      }
+    }
+
+    /* 辅助 */
+    .mt-1 { margin-top: 1rem; }
+    .text-small { font-size: 0.85rem; color: #4d7382; }
+
+    hr {
+      border: none;
+      border-top: 1px solid #dae9ef;
+      margin: 1.4rem 0;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 文章标题 + 导语 -->
+  <div class="article-header">
+    <h1>完美体育 · 一站识别</h1>
+    <div class="subhead">
+      <span>用途速览</span>
+      <span>体育内容聚合</span>
+      <span>指南</span>
+    </div>
+  </div>
+
+  <!-- 导语卡片 -->
+  <div class="intro-card">
+    <p>如果你刚接触域名 <strong>space-wmsports.com</strong>，最直接的方式是从名字与布局理解它的定位。以下从用户视角拆解 <span class="highlight">「完美体育」</span> 的核心面貌，帮你快速判断这是不是你需要的站点。</p>
+  </div>
+
+  <!-- 正文：网格卡片 -->
+  <div class="content-grid">
+
+    <div class="content-block">
+      <h2>平台属性</h2>
+      <p>这是一个以体育资讯、赛事动态、运动文化为焦点的内容型站点。首页结构清晰，导航区分明确，没有冗余广告干扰，整体风格偏向信息聚合与阅读。</p>
+      <div class="tag-list">
+        <em>资讯</em>
+        <em>赛事</em>
+        <em>运动</em>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <h2>内容特征</h2>
+      <p>覆盖热门联赛、球员数据、战术分析以及运动生活方式。文章分类使用常见标签体系，方便按兴趣筛选。部分板块提供数据表格与赛程预览，适合快速浏览。</p>
+    </div>
+
+    <div class="content-block full">
+      <h2>谁适合浏览</h2>
+      <p>日常关注体育新闻、希望在一个页面内获取多项运动更新的用户。网站设计偏重可读性，不强制注册或登录即可阅读大部分内容。移动端适配良好，卡片布局在手机上也清晰易读。</p>
+      <p>如果你习惯从单一站点获取多项目赛事信息，这里的结构会比较顺手。</p>
+    </div>
+
+  </div>
+
+  <!-- 引用提示块 -->
+  <div class="quote-note">
+    <div class="q-icon">❝</div>
+    <div class="q-text">
+      <p>使用前建议先浏览导航栏目，了解内容分类方式。部分外部链接会跳转到合作数据页面，适合进一步深究。</p>
+      <span class="source">—— 根据站点结构整理</span>
+    </div>
+  </div>
+
+  <!-- 访问句 —— 自然嵌入链接 -->
+  <div class="access-line">
+    🏟️ 想进一步了解内容布局，可以直接前往 <a href="https://space-wmsports.com">完美体育</a> 查看频道分类。
+  </div>
+
+  <!-- 补充段落：场景提示 -->
+  <div style="margin: 1.2rem 0;">
+    <p style="background: #f5fafd; padding: 0.8rem 1rem; border-radius: 14px; color: #1c4b5a;">
+      ⚽ 例如：你可以在首页快速找到「热门赛事」「最新比分」「专题分析」三个区域，每个区域使用独立卡片，避免信息混淆。适合比赛日快速扫读。
+    </p>
+  </div>
+
+  <!-- FAQ 摘要（简洁） -->
+  <div class="faq-mini">
+    <details>
+      <summary>这个网站需要注册才能看吗？</summary>
+      <p>大部分内容对访客开放，无需注册即可浏览文章和赛程。部分互动功能（如评论或收藏）可能需要账号，但阅读体验基本不受限制。</p>
+    </details>
+    <details>
+      <summary>内容更新频率如何？</summary>
+      <p>根据板块不同，赛前分析、赛后战报通常会在比赛日前后更新。数据表格自动同步，实时性较高。</p>
+    </details>
+    <details>
+      <summary>移动端浏览体验怎么样？</summary>
+      <p>采用响应式设计，手机浏览器内卡片自动堆叠，字号与间距针对小屏优化，无需频繁缩放。</p>
+    </details>
+  </div>
+
+  <!-- 底部说明 -->
+  <hr>
+  <div class="text-small" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.3rem;">
+    <span>本页为介绍索引页 · 内容基于公开信息整理</span>
+    <span>识别版本 2025</span>
+  </div>
+
+</div>
+</body>
+</html>
